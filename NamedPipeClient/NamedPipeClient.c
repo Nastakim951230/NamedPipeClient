@@ -73,7 +73,7 @@ int main()
 			SuccessRead = ReadFile(hNamedPipe, buffer, SIZE_BUFFER, &actual_reaen, NULL);
 			if (SuccessRead)
 			{
-				if (buffer!=0)
+				if (buffer!=L"")
 				{
 					printf("\nÎעגוע סונגוסא: ");
 					printf(buffer);
@@ -82,11 +82,11 @@ int main()
 				}
 				else
 				{
-					printf("\nÎעגוע סונגוסא: Îרטבךא");
+					printf("\nÎעגוע סונגוסא: ÎØÈÁÊÀ");
 					printf("\n");
 					flag_otvet = TRUE;
-
 				}
+				
 			}
 		}
 		Sleep(1000);

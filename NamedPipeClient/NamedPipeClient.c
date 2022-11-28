@@ -62,7 +62,7 @@ int main()
 				}
 				else
 				{
-					buffer = "0";
+					buffer = L"0";
 					WriteFile(hNamedPipe, buffer, size_buffer, &actual_written, NULL);
 					flag_otvet = FALSE;
 				}
@@ -70,10 +70,13 @@ int main()
 				
 			}
 			buffer = (CHAR*)calloc(size_buffer, sizeof(CHAR));
+		
 			SuccessRead = ReadFile(hNamedPipe, buffer, SIZE_BUFFER, &actual_reaen, NULL);
 			if (SuccessRead)
 			{
-				if (buffer!=L"")
+				float a = atof(buffer);
+				
+				if (a!=0)
 				{
 					printf("\nОтвет сервеса: ");
 					printf(buffer);
